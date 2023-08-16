@@ -1,0 +1,97 @@
+.navbar{
+    display: flex;
+    flex-direction: column;// align items columnwise
+    align-items: center;
+    background-color: #013914;
+    color:white;
+    transition: 0.5s all ease;// transition from normal to active
+    position: sticky;
+    top:0;// position to stick to
+    &.active{
+        background-color: white;
+        color:black;
+        button {
+            background-color: white !important;
+            color: #1dbf73 !important;
+            border: 1px solid #1dbf73 !important;
+          }
+    }
+    .container{
+        width: 1400px;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0px;
+        .logo{
+            font-size: 34px;
+            font-weight: bold;
+            .text{}
+            .dot{
+                color:green
+            }
+        }
+        .links{
+            display:flex;
+            gap: 24px;// gap between rows and columns
+            align-items: center;
+            font-weight: 500;
+            font-family:'Montserrat', sans-serif;
+            .user{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                cursor: pointer;
+                position: relative;
+            }
+            .options{
+                position: absolute;
+                top: 50px;
+                right: 0;padding: 20px;
+                background-color: white;
+                border-radius: 10px;
+                border:1px solid lightgray;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                color:gray;
+                width: 200px;
+                font-weight: 300 ;
+            }
+            img{
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                object-fit: cover;
+
+            }
+           button{
+            color:white;
+            padding:10px 20px;
+            border-radius: 5px;
+            border:1px solid white;
+            cursor:pointer;
+            background-color: transparent;
+            &:hover{ // scss & represents parent element
+                background-color: #1dbf73;
+                border-color:#1dbf73;
+            }
+           }
+           
+
+        }
+        
+    }
+    hr{
+      width: 100%;
+      height: 0;
+      bottom: 0.5px solid lightgray;  
+    }
+    .menu{
+        width: 1400px;
+        padding: 10px 0;
+        display: flex;
+        justify-content: space-between;
+        font-weight: 300;
+        color: gray;
+        font-family: 'Montserrat', sans-serif;
+    }
+}
