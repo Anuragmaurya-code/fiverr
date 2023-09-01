@@ -5,6 +5,7 @@ import { useQuery } from '@tanstack/react-query';
 import newRequest from '../../utils/newRequest';
 
 const GigCard = ({ item }) => {
+    console.log(item)
     const { isLoading, error, data } = useQuery({// runs when the page is rendered
         queryKey: ['item.userId'],
         queryFn: () =>
@@ -12,6 +13,7 @@ const GigCard = ({ item }) => {
           .get(`/users/${item.userId}`) // item is the prop
           .then((res)=>{return res.data})
       })
+      console.log(item.userId)
     return (
         <Link to={`/gig/${item._id}`} className='link'>
             <div className='gigCard'>

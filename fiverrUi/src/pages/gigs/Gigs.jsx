@@ -8,6 +8,7 @@ import {
   useQuery,
 } from '@tanstack/react-query'
 import { useLocation } from 'react-router-dom';
+import Reviews from '../../components/reviews/Reviews';
 const Gigs = () => {
   const [open, setOpen] = useState(false);
   const [sort, setSort] = useState("sales");
@@ -51,6 +52,7 @@ const Gigs = () => {
             <input type="text" placeholder='min' ref={minRef}/>
             <input type="text" placeholder='max' ref={maxRef}/>
             <button onClick={apply}>Apply</button>
+          
           </div>
           <div className="right">
             <div className="sortBy">SortBy</div>

@@ -22,7 +22,7 @@ const connection=async() => {
     await mongoose.connect(process.env.MONGO);
     console.log('connected to MongoDB');
   } catch (error) {
-    handleError(error);
+    console.log(error);
   }
 }
 
@@ -31,7 +31,7 @@ app.use(cookieParser()) //  its a middleware that allows cookies to parse
 
 app.use("/api/users",userRoute);// app.use(path,middleware) it is use to handle multiple 
 // HTTP Methods (e.g., GET, POST, PUT, DELETE) 
-app.use("/api/review",reviewRoute);
+app.use("/api/reviews",reviewRoute);
 app.use("/api/order",orderRoute);
 app.use("/api/message",messageRoute);
 app.use("/api/gigs",gigRoute);
@@ -40,7 +40,7 @@ app.use("/api/auth",authRoute);
 
 app.use((err,req,res,next)=>{
   const errorStatus=err.status || 500;
-  const errorMessage=err.message || "Something went wrong"
+  const errorMessage=err.message || "Server -> Something went wrong"
   return res.status(errorStatus).send(errorMessage);
 })// error handling
 

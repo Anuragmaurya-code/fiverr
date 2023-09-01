@@ -15,11 +15,7 @@ export const deleteUser = async (req, res,next) => {
 export const getUser = async (req, res,next) => {
     
     const user = await User.findById(req.params.id)
-    if (req.userId !== user._id.toString())// as in database its an object id
-    {
-        return createError(403,"You can  delete only your account")
-    }
-    const {password,...data}=user._doc
+    const {password,...data}=await user._doc
     res.status(200).send(data)
 
 } 
